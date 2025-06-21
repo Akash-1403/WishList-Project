@@ -12,7 +12,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+/* 
 a {
   font-weight: 500;
   color: #646cff;
@@ -65,4 +65,64 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+ */
+
+ .main-div{
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+ /* border: 1px solid red; */
+ padding-bottom: 15px;
+ margin-top: 150px;
+ /* width: 390px; */  
+
+
+ 
+}
+.searchbar{
+  background-color: #fafafa;
+  color: #444;
+  width: 300px;
+  height: 30px;
+  border-radius: 30px;
+
+
+}
+.search-btn{
+  background-color: red;
+  color: #fafafa;
+  border: none;
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+}
+.delete{
+  width: 380px;
+  /* border:1px solid red; */
+  padding: 15px;
+ 
+ 
+
+}
+.deleteBox{
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-between;
+ padding-bottom: 12px;
+}
+.deleteIcon{
+  
+  border: none;
+  background-color: #242424;
+  
+}
+.deleteImg{
+  width: 25px;
+  height: 25px;
+}
+
+.strike{
+  text-decoration: line-through #fafafa;
+  color: red;
 }
