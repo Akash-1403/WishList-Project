@@ -37,6 +37,22 @@ function App() {
   }
 
 
+  const WishListedItems =({id, isCompleted,wishList})  =>{
+    return(
+     
+              <div className='deleteBox'  >
+                <label>
+                  <input checked={isCompleted} type='checkbox' onChange={(e)=> onWishCheckChange(e,id)} />
+                  <span className={isCompleted ? 'strike' : ''} >{wishList}</span>
+                </label>
+                <button onClick={() => onDeleteClick(id)} className='deleteIcon'>
+
+                  <img src="./image.png" alt="deleteimg" className='deleteImg' />
+                </button>
+              </div>
+    )
+  }
+
 console.log(arrOfWishlist)
 
   return (
@@ -53,11 +69,18 @@ console.log(arrOfWishlist)
         </div>
 
         <div className='delete'>
+
           {
             /*  to render the arrayOfWishlist
              here we destructuring the arrofWishList , into three names , so now we dont need to write the wishList.id , now we write directly id  */
-            arrOfWishlist.map(({id, wishList,isCompleted}) => (
-              <div className='deleteBox' key={id} >
+            arrOfWishlist.map(({id, wishList,isCompleted}) =>  <WishListedItems key={id}  id={id} wishList={wishList} isCompleted={isCompleted}   />
+
+
+
+
+
+/*   this is same as the code in wishlisteditems component  
+         <div className='deleteBox' key={id} >
                 <label>
                   <input checked={isCompleted} type='checkbox' onChange={(e)=> onWishCheckChange(e,id)} />
                   <span className={isCompleted ? 'strike' : ''} >{wishList}</span>
@@ -66,10 +89,10 @@ console.log(arrOfWishlist)
 
                   <img src="./image.png" alt="deleteimg" className='deleteImg' />
                 </button>
-              </div>
+              </div> */
 
 
-            ))
+            )
           }
         </div>
       </div>
